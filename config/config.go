@@ -16,6 +16,7 @@ type Config struct {
 	Port                 string
 	DBUser               string
 	DBPassword           string
+	DBHost               string
 	DBName               string
 	JWTSecret            string
 	JWTExpirationInHours int
@@ -40,6 +41,7 @@ func CFG() Config {
 		Port:                 getEnv("PORT", "3333"),
 		DBUser:               getEnv("DB_USER", "user"),
 		DBPassword:           getEnv("DB_PASSWORD", "root"),
+		DBHost:               getEnv("DB_HOST", "postgres"),
 		DBName:               getEnv("DB_NAME", ""),
 		JWTSecret:            getEnv("JWT_SECRET", "reifg5349Gfjg3FIO4G945"),
 		JWTExpirationInHours: getEnvAsInt("JWT_LIFETIME", 24),
